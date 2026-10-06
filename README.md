@@ -13,6 +13,8 @@ The `graphscope-model` module implements the canonical DI graph model. It repres
 - deterministic canonical ordering and structural validation of graph references.
 
 The model has no dependency on Dagger, Hilt, injection annotation APIs, Android, or compiler APIs.
+It also defines a versioned canonical binary representation and SHA-256 graph fingerprint, giving
+equal graphs the same durable identity across processes and machines.
 
 The `graphscope-dagger` module translates Dagger's compile-time SPI graph into that model. It extracts component hierarchy, binding ownership, keys, qualifiers, scopes, and binding dependency edges. Component and binding identifiers are deterministic across compilations of the same graph. Since Hilt builds its components with Dagger, the same SPI boundary is suitable for Hilt graphs.
 
@@ -36,4 +38,4 @@ override fun visitGraph(
 
 Register that plugin on the annotation processor path as described by the Dagger SPI. The adapter uses Dagger 2.60.1's current SPI, which Dagger marks experimental.
 
-Stable identity hashing, persistence, analysis, diffing, telemetry, and visualization remain future milestones.
+Persistence, analysis, diffing, telemetry, and visualization remain future milestones.

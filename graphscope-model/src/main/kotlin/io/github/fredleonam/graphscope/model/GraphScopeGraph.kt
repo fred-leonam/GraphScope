@@ -117,6 +117,9 @@ class GraphScopeGraph private constructor(
     fun childrenOf(componentId: ComponentId): List<Component> =
         immutableList(components.filter { it.parentId == componentId })
 
+    /** Returns this graph's durable identity under the current canonical format version. */
+    fun fingerprint(): GraphFingerprint = GraphScopeCanonicalFormat.fingerprint(this)
+
     override fun equals(other: Any?): Boolean =
         other is GraphScopeGraph &&
             components == other.components &&
