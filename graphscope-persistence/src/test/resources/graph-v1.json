@@ -1,0 +1,23 @@
+{
+  "format": "graphscope",
+  "schemaVersion": 1,
+  "components": [
+    {
+      "id": "root",
+      "name": "example.Root",
+      "parentId": null
+    }
+  ],
+  "bindings": [
+    {
+      "id": "client",
+      "key": {
+        "typeName": "example.Client",
+        "qualifier": null
+      },
+      "componentId": "root",
+      "scope": null
+    }
+  ],
+  "edges": []
+}
